@@ -1,0 +1,13 @@
+Данные найдены! Сумма к оплате: <b>%out_summ%</b> руб. <br />
+<form action="https://merchant.roboxchange.com/Index.aspx" method="POST" target="_blank">
+ <input type="hidden" name="FinalStep" value="1">
+ <input type="hidden" name="MrchLogin" value="%mrh_login%">
+ <input type="hidden" name="OutSum" value="%out_summ%">
+ <input type="hidden" name="InvId" id="invid" value="%inv_id%">
+ <input type="hidden" name="Desc" value="%inv_desc%">
+ <input type="hidden" name="SignatureValue" id="filename" value="%crc%">
+ E-mail: <input type="text" name="Email" id="Email" value="" onblur="saveEmail();">
+ <input type="hidden" name="Shp_item" value="%shp_item%">
+ <input type="submit" value="Оплатить">
+</form>
+<div id="debug"></div>

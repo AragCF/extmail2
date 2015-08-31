@@ -1,0 +1,377 @@
+@brdr = 0px;
+@pad  = 3px;
+
+@radius       = 5px;
+@radius-small = 2px;
+
+@borderwidth  = 1px;
+
+
+
+
+
+
+@fontsize=9pt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+@hue=%hue%;
+
+@s_button_face               = #ADB;
+@s_button_foreground         = #000;
+
+@s_window_background         = #FFF;
+@s_window_foreground         = #000;
+
+@s_application_background    = #888;
+
+@s_menu_background           = #797;
+@s_menu_foreground           = #FFF;
+
+@s_link_foreground           = #000;
+@s_link_foreground_hover     = #2A2;
+
+@s_border                    = #777;
+
+@s_evenrow                   =         @s_button_face                    ;
+@s_oddrow                    = lighten(@s_button_face              , 15%);
+
+@s_evenrow_mya               = spin   (lighten(@s_button_face,15%) ,  90);
+@s_oddrow_mya                = darken (@s_evenrow_mya              ,  8%);
+
+@s_dark_border               = darken (@s_button_face              , 50%);
+@s_light_border              = lighten(@s_button_face              , 50%);
+
+@s_whiteongray_background    = #772929;
+@s_whiteongray_foreground    = #FEE;
+
+@s_popup_background          = #FFF;
+@s_popup_foreground          = #000;
+
+@s_link_dark_foreground      = #000;
+@s_link_dark_foreground_hover= #2A2;
+
+@s_grouphdr_background       = #F2F2F2;
+@s_grouphdr_foreground       = #000;
+
+@s_border_input              = #383838;
+
+
+
+//@s_selecteditem          = darken (@s_button_face              , 18%);
+
+//darken(@window_background,5%)
+
+@button_foreground         = spin(@s_button_foreground       , @hue);
+@button_face               = spin(@s_button_face             , @hue);
+@window_background         = spin(@s_window_background       , @hue);
+@window_foreground         = spin(@s_window_foreground       , @hue);
+@application_background    = spin(@s_application_background  , @hue);
+@menu_background           = #777;
+@menu_foreground           = spin(@s_menu_foreground         , @hue);
+@link_foreground           = spin(@s_link_foreground         , @hue);
+@link_foreground_hover     = spin(@s_link_foreground_hover   , @hue);
+@border                    = spin(@s_border                  , @hue);
+
+@evenrow                   = spin(@s_evenrow                 , @hue);
+@oddrow                    = spin(@s_oddrow                  , @hue);
+@evenrow_mya               = spin(@s_evenrow_mya             , @hue);
+@oddrow_mya                = spin(@s_oddrow_mya              , @hue);
+
+@dark_border               = spin(@s_dark_border             , @hue);
+@light_border              = spin(@s_light_border            , @hue);
+
+@whiteongray_background    = spin(@s_whiteongray_background            , @hue);
+@whiteongray_foreground    = spin(@s_whiteongray_foreground            , @hue);
+
+@popup_background          = spin(@s_popup_background            , @hue);
+@popup_foreground          = spin(@s_popup_foreground            , @hue);
+
+@link_dark_foreground      = spin(@s_link_dark_foreground            , @hue);
+@link_dark_foreground_hover= spin(@s_link_dark_foreground_hover            , @hue);
+
+@grouphdr_background       = spin(@s_grouphdr_background            , @hue);
+@grouphdr_foreground       = spin(@s_grouphdr_foreground            , @hue);
+
+@border_input              = spin(@s_border_input            , @hue);
+
+
+
+
+
+
+
+
+@dark_border             = darken (@button_face              , 50%);
+@light_border            = lighten(@button_face              , 50%);
+
+
+
+
+
+html, body, div, p, table, pre, td, tr, th, ul, ol, li, form, fieldset, img, blockquote, iframe, input, select, textarea {
+ margin:       0;
+ padding:      0;
+ font-family:  Verdana,Arial,Helvetica,sans-serif;
+ font-size:    @fontsize;
+}
+
+body {
+ overflow: hidden_;
+}
+a img {
+ border: 0px;
+}
+.floatr {
+ float: right;
+}
+.floatl, .floatlb {
+ float: left;
+}
+.hidden {
+ display: none;
+}
+
+
+body#body {
+ background:    @button_face;
+ color:         @button_foreground;
+ 
+ h1, h2, h3, h4, h5, h6, .adminmenu {
+  background:   @button_face;
+  color:        @button_foreground;
+ }
+ a, a:link, a:hover, a:visited {
+  color:        @button_foreground;
+ }
+}
+
+
+
+input, textarea, select, a, a:link, a:hover, a:visited {
+      color: @popup_foreground;
+}
+input {
+     height: 20px;
+}
+input, textarea, select {
+    padding: 0px 2px;
+     border: 1px solid @border;
+ background: @popup_background;
+ .rounded-corners-all;
+ .shadow-xlite;
+}
+
+
+
+
+
+
+
+
+.form {
+ padding: 5px 0px 0px 0px;
+   width: 100px;
+  height: 20px;
+  
+ input[type="file"] {
+      z-index: 999;
+  line-height: 0;
+    font-size: 50px;
+     position: absolute;
+      opacity: 0;
+       filter: alpha(opacity = 0); -ms-filter: "alpha(opacity=0)";
+       cursor: pointer;
+      _cursor: hand;
+       margin: 0;
+      padding: 0;
+         left: 0;
+ }
+ input[type="text"], div {
+  float: left;
+ }
+ * {
+   width: 100px;
+  height: 20px;
+ }
+} 
+
+
+
+
+#loginresult, #submitresult {
+     text-align: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#input_search {
+     border: 0px solid;
+ background: #252525;
+}
+
+
+.pushed {
+ border-right:      solid @borderwidth @light_border;
+ border-bottom:     solid @borderwidth @light_border;
+ border-left:       solid @borderwidth @dark_border;
+ border-top:        solid @borderwidth @dark_border;
+}
+.pulled {
+ border-left:      solid @borderwidth @light_border;
+ border-top:       solid @borderwidth @light_border;
+ border-right:     solid @borderwidth @dark_border;
+ border-bottom:    solid @borderwidth @dark_border;
+}
+
+div.c, input.button, .form .button {
+ background:  @button_face;
+ .pulled;
+}
+
+input.button, .form .button {
+ padding:          3px 6px 3px 6px;
+}
+
+    @btnpictureparams = no-repeat scroll 4px center @button_face;
+@btnpictureparams_wog = no-repeat scroll 4px center @button_face;
+
+.padding_button_with_icon {
+ padding:          3px 6px 3px 23px;
+}
+
+
+#btn_login, #btn_send {
+ height: 22px;
+}
+#btn_login {
+ background: url("%imgfolder%/door-open-in.png")   @btnpictureparams_wog;
+ .padding_button_with_icon;
+}
+#btn_send {
+ background: url("%imgfolder%/mail-send.png")      @btnpictureparams_wog;
+ .padding_button_with_icon;
+}
+
+
+a.btn div {
+ height: 24px;
+  color: @button_foreground;
+}
+
+
+input.button:active, td#gal_center div, div#gal_thumbs_div {
+ .pushed;
+ .p {
+  border: 0px solid @border;
+ }
+ .p#active {
+   background:  @oddrow;
+ }
+}
+
+
+select, textarea, div#gal_thumbs_div, div.newbuildings_subitems_container {
+ background:  @window_background;
+ color:       @window_foreground;
+}
+
+
+
+
+
+
+
+
+
+
+
+div.colorpicker {
+ float:  right;
+ height: 20px;
+ width:  20px;
+ margin: 0px 3px 0px 0px;
+ border: 1px solid @border;
+}
+
+#color_0  { background: spin(@s_button_face             , 0  ); }
+#color_1  { background: spin(@s_button_face             , 30 ); }
+#color_2  { background: spin(@s_button_face             , 60 ); }
+#color_3  { background: spin(@s_button_face             , 90 ); }
+#color_4  { background: spin(@s_button_face             , 120); }
+#color_5  { background: spin(@s_button_face             , 150); }
+#color_6  { background: spin(@s_button_face             , 180); }
+#color_7  { background: spin(@s_button_face             , 210); }
+#color_8  { background: spin(@s_button_face             , 240); }
+#color_9  { background: spin(@s_button_face             , 270); }
+#color_10 { background: spin(@s_button_face             , 300); }
+#color_11 { background: spin(@s_button_face             , 330); }
+
+.r {
+ text-align: right;
+}
+.l {
+ text-align: left;
+}
+
+
+
+.border {
+ margin: 5px;
+ border-collapse: collapse;
+ border: 1px solid #777;
+ td {
+  padding: 5px;
+ }
+}

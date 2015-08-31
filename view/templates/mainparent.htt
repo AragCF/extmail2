@@ -1,0 +1,227 @@
+<html>
+ <head>
+  <title>Realty requests</title>  
+  
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta http-equiv="Content-Language" content="ru" />
+  
+  <meta name="keywords" content="разработка сайтов, сайт, создание сайтов, сайт +на заказ, цена сайта, официальный сайт цена, цена сайт каталог, товары +и цены сайт, мебель официальный сайт цены, часы официальный сайт цены, заказать сайт, купить сайт, куплю сайт, где купить сайт, какой сайт купить, купить интернет сайт, веб-разработка, веб-приложения, создать сайт, Creative Force, creative force studio, стоимость разработки сайта, логотип, разработка логотипов, фирменный стиль, фирстиль, разработка фирменного стиля, продвижение сайта, лендинг пейдж, посадочная страница, заказать лендинг, создание лендинга цена" />
+  <meta name="description" content="Creative Force — веб-студия эффективных решений для вашего бизнеса. Разработка сайтов, создание веб-приложений и посадочных страниц, разработка логотипов и фирменного стиля" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+  <meta name="revisit-after" content="1 days" />
+  
+  <link rel="stylesheet" type="text/css" href="%srvroot%file.php?name=view/styles/style-min.css"/>
+  <link rel="SHORTCUT ICON" href="%imgfolder%/favicon.ico"/>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:500,100italic,100,300,300italic,400,400italic,500italic,700,700italic,900italic,900&subset=latin,cyrillic-ext' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript" src="%srvroot%controller/js/ajax2.js"></script>
+  <script type="text/javascript" src="%srvroot%file.php?name=controller/js/common.js"></script>
+  <script type="text/javascript" src="%srvroot%controller/js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="%srvroot%controller/js/json.js"></script>
+  <script type="text/javascript" src="%srvroot%controller/js/md5.js"></script>
+ </head>
+ <body lang="ru" id='body' onload="load('%srvroot%');" onresize="resize();">
+  <div class=hidden id="loading"><img src="%imgfolder%/progress.gif"></div>
+  <div class=hidden id="loadingsmall"><img src="%imgfolder%/ajax-loader-admin.gif"></div>
+  
+  <table>
+   <tr>
+    <td>Введите номер объекта:</td>
+    <td><cinput cadnum0>2:56:30302:639</cinput></td>
+    <td><button onclick='getData(0);'>Получить данные</button></td>
+   </tr>
+   <tr>
+    <td>Результат:</td><td colspan=2 id="result0"></td>
+   </tr>
+  </table>
+  
+		<h3>По адресу</h3>
+  
+  <table>
+   <tr>
+    <td>Источник:</td>
+    <td>
+     <select id='srcObject'>
+      <loop_src_default>
+       <option id="-1">Выберите...</option>
+      </loop_src_default>
+      <loop_src>
+       <option id="%id%">%name%</option>
+      </loop_src>
+     </select>
+    </td>
+    <td id="loader_addr0">
+    </td>
+   </tr>
+   
+   <tr>
+    <td>Субъект:</td>
+    <td>
+     <select id='addr0' onchange='fillSelect(0);' onclick='fillSelect(0);'>
+      <loop_addr_default>
+       <option id="-1">Выберите...</option>
+      </loop_addr_default>
+      <loop_addr>
+       <option id="%id%">%name%</option>
+      </loop_addr>
+     </select>
+    </td>
+    <td id="loader_addr0">
+    </td>
+   </tr>
+   
+   <tr>
+    <td>Район:</td>
+    <td>
+     <select id='addr1' onchange='fillSelect(1);' onclick='fillSelect(1);'>
+      <option id="-1">Сначала выберите субъект</option>
+     </select>
+    </td>
+    <td id="loader_addr1">
+    </td>
+   </tr>
+   
+   <tr>
+    <td>Населённый пункт:</td>
+    <td>
+     <select id='addr2'>
+      <option id="-1">Сначала выберите район</option>
+     </select>
+    </td>
+    <td id="loader_addr2">
+    </td>
+   </tr>
+   
+   <!--
+   <tr>
+    <td>Тип населенного пункта:</td>
+    <td>
+     <select id='addr3' onchange='fillSelect(3);' onclick='fillSelect(3);'>
+      <option id="-1">Сначала выберите тип населённого пункта</option>
+     </select>
+    </td>
+    <td id="loader_addr3">
+    </td>
+   </tr>
+   -->
+   
+   <tr>
+    <td>Тип улицы:</td>
+    <td>
+     <select id='addr4'>
+      <option value="0" selected="true">Выберите тип улицы</option>
+      <option value="str1">Улица</option>
+      <option value="str2">Переулок</option>
+      <option value="str3">Проспект</option>
+      <option value="str4">Площадь</option>
+      <option value="str5">Микрорайон</option>
+      <option value="str6">Аллея</option>
+      <option value="str7">Бульвар</option>
+      <option value="str8">Аал</option>
+      <option value="str9">Аул</option>
+      <option value="str10">Въезд</option>
+      <option value="str11">Выселки</option>
+      <option value="str12">Городок</option>
+      <option value="str13">Деревня</option>
+      <option value="str14">Дорога</option>
+      <option value="str15">ж/д остановочный (обгонный) пункт</option>
+      <option value="str16">Железнодорожная будка</option>
+      <option value="str17">Железнодорожная казарма</option>
+      <option value="str18">Железнодорожная платформа</option>
+      <option value="str19">Железнодорожная станция</option>
+      <option value="str20">Железнодорожный пост</option>
+      <option value="str21">Железнодорожный разъезд</option>
+      <option value="str22">Животноводческая точка</option>
+      <option value="str23">Заезд</option>
+      <option value="str24">Казарма</option>
+      <option value="str25">Квартал</option>
+      <option value="str26">Километр</option>
+      <option value="str27">Кольцо</option>
+      <option value="str28">Линия</option>
+      <option value="str29">Местечко</option>
+      <option value="str30">Набережная</option>
+      <option value="str31">Населенный пункт</option>
+      <option value="str32">Остров</option>
+      <option value="str33">Парк</option>
+      <option value="str34">Переезд</option>
+      <option value="str35">Планировочный район</option>
+      <option value="str36">Платформа</option>
+      <option value="str37">Площадка</option>
+      <option value="str38">Полустанок</option>
+      <option value="str39">Поселок/станция</option>
+      <option value="str40">Поселок сельского типа</option>
+      <option value="str41">Починок</option>
+      <option value="str42">Почтовое отделение</option>
+      <option value="str43">Проезд</option>
+      <option value="str44">Просек</option>
+      <option value="str45">Проселок</option>
+      <option value="str46">Проулок</option>
+      <option value="str47">Разъезд</option>
+      <option value="str48">Сад</option>
+      <option value="str49">Село</option>
+      <option value="str50">Сквер</option>
+      <option value="str51">Слобода</option>
+      <option value="str52">Станция</option>
+      <option value="str53">Строение</option>
+      <option value="str54">Территория</option>
+      <option value="str55">Тракт</option>
+      <option value="str56">Тупик</option>
+      <option value="str57">Участок</option>
+      <option value="str58">Хутор</option>
+      <option value="str59">Шоссе</option>
+     </select>
+    </td>
+    <td id="loader_addr4">
+    </td>
+   </tr>
+   
+   
+   
+   <tr>
+    <td>Улица:</td>
+    <td>
+     <cinput street>Введите название улицы</cinput>
+    </td>
+   </tr>
+   <tr>
+    <td>Номер дома:</td>
+    <td>
+     <cinput house>Введите номер дома</cinput>
+    </td>
+   </tr>
+   <tr>
+    <td>Корпус:</td>
+    <td>
+     <cinput building>Введите корпус</cinput>
+    </td>
+   </tr>
+   <tr>
+    <td>Строение:</td>
+    <td>
+     <cinput structure>Введите строение</cinput>
+    </td>
+   </tr>
+   <tr>
+    <td>Номер квартиры:</td>
+    <td>
+     <cinput apartment>Введите номер квартиры</cinput>
+    </td>
+   </tr>
+   
+   
+   
+   <tr>
+    <td></td>
+    <td><button onclick='getData(1);'>Получить данные</button></td>
+   </tr>
+   
+   <tr>
+    <td>Результат:</td><td colspan=2 id=result1></td>
+   </tr>
+  </table>
+  
+  
+  <div id="debug"></div>
+  
+ </body>
+</html>

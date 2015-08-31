@@ -1,0 +1,16 @@
+<loop_items>
+ <table class=border>
+  <loop_fields_big>
+   <tr>
+    <td class=r><b>%Name%:</b></td>
+    <td class=l><b>%Value% руб.</b></td>
+   </tr>
+  </loop_fields_big>
+  <loop_fields>
+   <tr>
+    <td class=r>%Name%:</td>
+    <td class=l>%Value%</td>
+   </tr>
+  </loop_fields>
+ </table>
+</loop_items>

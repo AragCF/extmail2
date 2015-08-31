@@ -1,0 +1,23 @@
+<table class=border>
+ <tr>
+  <th colspan=2>№</th>
+  <th>Источник</th>
+  <th>Кадастровый номер</th>
+  <th>Условный номер</th>
+  <th>Адрес</th>
+ </tr>
+ <loop_items>
+  <tr>
+   <td>
+    %i%
+   </td>
+   <td>
+    <a href="javascript:;" onclick="showDetails('%objectCn%');">Узнать кадастровую стоимость</a>
+   </td>
+   <td>%srcObjectStr%</td>
+   <td>%objectCn%</td>
+   <td>%objectCon%</td>
+   <td>%addressNotes%</td>
+  </tr>
+ </loop_items>
+</table>
